@@ -162,7 +162,7 @@ export function Process() {
                                         </motion.div>
 
                                         {/* Content */}
-                                        <h3 className="text-xl font-bold mb-3 text-white">{step.title}</h3>
+                                        <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">{step.title}</h3>
                                         <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{step.description}</p>
                                     </div>
 

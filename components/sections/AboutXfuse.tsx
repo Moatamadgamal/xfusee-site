@@ -21,7 +21,7 @@ export function AboutXfuse() {
             role: t.aboutXfuse.avatars.vision.role,
             message: t.aboutXfuse.avatars.vision.message,
             icon: Lightbulb,
-            color: 'text-yellow-400',
+            color: 'text-yellow-600 dark:text-yellow-400',
             gradient: 'from-yellow-500/20 to-orange-500/20',
         },
         {
@@ -30,7 +30,7 @@ export function AboutXfuse() {
             role: t.aboutXfuse.avatars.dev.role,
             message: t.aboutXfuse.avatars.dev.message,
             icon: Code2,
-            color: 'text-primary-400',
+            color: 'text-primary-600 dark:text-primary-400',
             gradient: 'from-primary-500/20 to-cyan-500/20',
         },
         {
@@ -39,7 +39,7 @@ export function AboutXfuse() {
             role: t.aboutXfuse.avatars.ai.role,
             message: t.aboutXfuse.avatars.ai.message,
             icon: Brain,
-            color: 'text-purple-400',
+            color: 'text-purple-600 dark:text-purple-400',
             gradient: 'from-purple-500/20 to-pink-500/20',
         },
         {
@@ -48,7 +48,7 @@ export function AboutXfuse() {
             role: t.aboutXfuse.avatars.design.role,
             message: t.aboutXfuse.avatars.design.message,
             icon: Palette,
-            color: 'text-pink-400',
+            color: 'text-pink-600 dark:text-pink-400',
             gradient: 'from-pink-500/20 to-purple-500/20',
         },
         {
@@ -57,7 +57,7 @@ export function AboutXfuse() {
             role: t.aboutXfuse.avatars.speed.role,
             message: t.aboutXfuse.avatars.speed.message,
             icon: Rocket,
-            color: 'text-orange-400',
+            color: 'text-orange-600 dark:text-orange-400',
             gradient: 'from-orange-500/20 to-red-500/20',
         },
         {
@@ -66,7 +66,7 @@ export function AboutXfuse() {
             role: t.aboutXfuse.avatars.support.role,
             message: t.aboutXfuse.avatars.support.message,
             icon: Users,
-            color: 'text-cyan-400',
+            color: 'text-cyan-600 dark:text-cyan-400',
             gradient: 'from-cyan-500/20 to-blue-500/20',
         },
     ];
@@ -200,7 +200,7 @@ export function AboutXfuse() {
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 + 0.3 }}
                                 >
-                                    <h3 className="text-sm font-semibold text-white">{avatar.name}</h3>
+                                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white">{avatar.name}</h3>
                                     <p className={`text-xs ${avatar.color} mt-1`}>{avatar.role}</p>
                                 </motion.div>
                             </motion.div>
@@ -246,7 +246,7 @@ export function AboutXfuse() {
                                                     </motion.div>
 
                                                     <div className="flex-1">
-                                                        <h3 className="text-2xl font-bold mb-2 text-white">
+                                                        <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
                                                             {avatar.name}
                                                         </h3>
                                                         <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">

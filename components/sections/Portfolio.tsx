@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { ComputerFrame } from '@/components/ui/ComputerFrame';
 import { MobileFrame } from '@/components/ui/MobileFrame';
 import { ExternalLink, ArrowRight, Layout, Smartphone, ShoppingBag, Building2 } from 'lucide-react';
+import Image from 'next/image';
 import { useLanguage } from '@/providers/LanguageProvider';
 
 // Categories for the portfolio
@@ -275,7 +276,7 @@ export function Portfolio() {
         : projects.filter(p => p.category === activeCategory);
 
     return (
-        <section id="portfolio" className="py-24 relative overflow-hidden bg-black/20">
+        <section id="portfolio" className="py-24 relative overflow-hidden bg-gray-50/50 dark:bg-black/20">
             {/* Background Ambience */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
@@ -345,7 +346,7 @@ export function Portfolio() {
                                 className="h-full"
                             >
                                 <Card
-                                    className="p-6 h-full border border-white/5 bg-white/5 hover:border-primary-500/30 transition-colors group"
+                                    className="p-6 h-full border border-gray-200 dark:border-white/5 bg-white/80 dark:bg-white/5 hover:border-primary-500/30 transition-colors group"
                                     hoverable={true}
                                     tilt={true}
                                 >
@@ -353,17 +354,27 @@ export function Portfolio() {
                                     <div className="mb-6 transform transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2 flex justify-center">
                                         {project.category === 'mobile' ? (
                                             <MobileFrame>
-                                                <div
-                                                    className="w-full h-full bg-cover bg-top transition-all duration-[3s] ease-in-out group-hover:bg-bottom"
-                                                    style={{ backgroundImage: `url('${project.image}')` }}
-                                                />
+                                                <div className="relative w-full h-full overflow-hidden group/img">
+                                                    <Image
+                                                        src={project.image}
+                                                        alt={project.title}
+                                                        fill
+                                                        className="object-cover object-top transition-all duration-[3s] ease-in-out group-hover:scale-110"
+                                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                    />
+                                                </div>
                                             </MobileFrame>
                                         ) : (
                                             <ComputerFrame>
-                                                <div
-                                                    className="w-full h-full bg-cover bg-top transition-all duration-[3s] ease-in-out group-hover:bg-bottom"
-                                                    style={{ backgroundImage: `url('${project.image}')` }}
-                                                />
+                                                <div className="relative w-full h-full overflow-hidden group/img">
+                                                    <Image
+                                                        src={project.image}
+                                                        alt={project.title}
+                                                        fill
+                                                        className="object-cover object-top transition-all duration-[3s] ease-in-out group-hover:scale-110"
+                                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                    />
+                                                </div>
                                             </ComputerFrame>
                                         )}
                                     </div>
@@ -371,12 +382,12 @@ export function Portfolio() {
                                     {/* Content */}
                                     <div className="relative z-10 text-center">
                                         <div className="flex items-center justify-center gap-2 mb-3">
-                                            <span className={`px-2 py-1 text-[10px] font-bold uppercase tracking-wider rounded bg-gradient-to-r ${project.color} bg-opacity-10 text-transparent bg-clip-text bg-white/10`}>
+                                            <span className={`px-2 py-1 text-[10px] font-bold uppercase tracking-wider rounded bg-gradient-to-r ${project.color} bg-opacity-10 text-primary-600 dark:text-primary-400 border border-primary-500/10`}>
                                                 {categories.find(c => c.id === project.category)?.label}
                                             </span>
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">
+                                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-400 transition-colors">
                                             {project.title}
                                         </h3>
 

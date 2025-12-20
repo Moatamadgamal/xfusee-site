@@ -174,11 +174,11 @@ Sent from XFUSE Website
                                         <label className="block text-sm font-medium mb-2">{t.contact.form.service.label}</label>
                                         <select
                                             {...register('service')}
-                                            className="flex h-12 w-full rounded-lg glass border border-white/10 bg-transparent px-4 py-3 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                                            className="flex h-12 w-full rounded-lg glass border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-transparent px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                                         >
-                                            <option value="" className="bg-gray-900">{t.contact.form.service.placeholder}</option>
+                                            <option value="" className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">{t.contact.form.service.placeholder}</option>
                                             {serviceOptions.map((service) => (
-                                                <option key={service} value={service} className="bg-gray-900">
+                                                <option key={service} value={service} className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
                                                     {service}
                                                 </option>
                                             ))}

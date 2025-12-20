@@ -115,15 +115,15 @@ export function AISolutions() {
                                             <Icon className="w-6 h-6 text-white" />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold mb-2">{solution.title}</h3>
+                                            <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{solution.title}</h3>
                                             <p className="text-gray-600 dark:text-gray-400">{solution.description}</p>
                                         </div>
                                     </div>
 
                                     <div className="mt-4 space-y-2">
                                         {solution.features.map((feature, idx) => (
-                                            <div key={idx} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-orange-400" />
+                                            <div key={idx} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-400">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                                                 <span>{feature}</span>
                                             </div>
                                         ))}

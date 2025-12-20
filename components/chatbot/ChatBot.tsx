@@ -174,7 +174,7 @@ export function ChatBot() {
                                         </div>
                                         <div className={`rounded-2xl p-3 ${message.sender === 'user'
                                             ? 'bg-gradient-accent text-white'
-                                            : 'glass border border-gray-200 dark:border-white/10'
+                                            : 'glass border border-gray-200 dark:border-white/10 text-gray-900 dark:text-gray-100'
                                             }`}>
                                             <p className="text-sm">{message.text}</p>
                                         </div>
@@ -211,7 +211,7 @@ export function ChatBot() {
                                     <button
                                         key={reply}
                                         onClick={() => handleQuickReply(reply)}
-                                        className="text-xs px-3 py-1.5 rounded-full glass border border-primary-500/30 hover:bg-primary-500/10 transition-colors"
+                                        className="text-xs px-3 py-1.5 rounded-full glass border border-primary-500/30 text-gray-800 dark:text-gray-200 hover:bg-primary-500/10 transition-colors"
                                     >
                                         {reply}
                                     </button>
@@ -223,7 +223,7 @@ export function ChatBot() {
                         <div className="px-4 pb-2">
                             <button
                                 onClick={handleTalkToHuman}
-                                className="w-full py-2 rounded-lg bg-orange-500/20 border border-orange-500/30 text-orange-400 text-sm font-semibold hover:bg-orange-500/30 transition-colors flex items-center justify-center gap-2"
+                                className="w-full py-2 rounded-lg bg-orange-500/10 dark:bg-orange-500/20 border border-orange-500/50 text-orange-600 dark:text-orange-400 text-sm font-semibold hover:bg-orange-500/20 transition-colors flex items-center justify-center gap-2"
                             >
                                 <Phone className="w-4 h-4" />
                                 Talk to Human

@@ -42,7 +42,7 @@ export function Hero() {
                             variants={slideUp}
                             initial="hidden"
                             animate="visible"
-                            className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+                            className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-gray-900 dark:text-white"
                         >
                             {t.hero.titleRegular}
                             <span className="block text-gradient-3d mt-2">{t.hero.titleGradient}</span>
@@ -53,7 +53,7 @@ export function Hero() {
                             initial="hidden"
                             animate="visible"
                             transition={{ delay: 0.2 }}
-                            className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0"
+                            className="text-xl text-gray-700 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0"
                         >
                             {t.hero.description}
                         </motion.p>
@@ -110,7 +110,7 @@ export function Hero() {
                                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                             >
                                 <Code2 className="w-12 h-12 text-primary-400 mb-2" />
-                                <p className="text-sm font-semibold">{t.hero.floating.cleanCode}</p>
+                                <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">{t.hero.floating.cleanCode}</p>
                             </motion.div>
 
                             <motion.div
@@ -119,7 +119,7 @@ export function Hero() {
                                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
                             >
                                 <Zap className="w-12 h-12 text-cyan-400 mb-2" />
-                                <p className="text-sm font-semibold">{t.hero.floating.fastDelivery}</p>
+                                <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">{t.hero.floating.fastDelivery}</p>
                             </motion.div>
 
                             <motion.div
@@ -128,7 +128,7 @@ export function Hero() {
                                 transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
                             >
                                 <Sparkles className="w-12 h-12 text-purple-400 mb-2" />
-                                <p className="text-sm font-semibold">{t.hero.floating.aiPowered}</p>
+                                <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">{t.hero.floating.aiPowered}</p>
                             </motion.div>
 
                             {/* Center glow */}

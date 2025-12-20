@@ -126,7 +126,7 @@ export function Header() {
                                 <motion.button
                                     key={item.href}
                                     onClick={() => scrollToSection(item.href)}
-                                    className="relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-white transition-colors group"
+                                    className="relative px-4 py-2 text-sm font-semibold text-gray-900 dark:text-gray-300 hover:text-primary-600 dark:hover:text-white transition-colors group"
                                     initial={{ opacity: 0, y: -20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: index * 0.1 }}
@@ -261,7 +261,7 @@ export function Header() {
                                             stiffness: 300,
                                             damping: 20
                                         }}
-                                        className="text-left py-4 px-6 mb-2 rounded-xl text-lg font-semibold text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all relative group overflow-hidden"
+                                        className="text-left py-4 px-6 mb-2 rounded-xl text-lg font-semibold text-gray-900 dark:text-gray-300 hover:text-primary-600 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all relative group overflow-hidden"
                                         whileHover={{ scale: 1.02, x: 5 }}
                                         whileTap={{ scale: 0.98 }}
                                     >

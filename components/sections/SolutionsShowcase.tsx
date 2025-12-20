@@ -56,7 +56,7 @@ export function SolutionsShowcase() {
     const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
     return (
-        <section id="solutions" className="py-24 relative overflow-hidden bg-black/20">
+        <section id="solutions" className="py-24 relative overflow-hidden bg-gray-50/50 dark:bg-black/20">
             {/* Background Elements */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-500/20 to-transparent" />
@@ -105,7 +105,7 @@ export function SolutionsShowcase() {
                                             <div className={`w-20 h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-glow`}>
                                                 <Icon className={`w-10 h-10 ${item.color}`} />
                                             </div>
-                                            <h3 className="text-2xl font-bold mb-4 text-white">{item.title}</h3>
+                                            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{item.title}</h3>
                                             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                                                 {item.problem}
                                             </p>
@@ -193,7 +193,7 @@ export function SolutionsShowcase() {
 
                         {/* Text & Buttons Column */}
                         <div className="flex-1 text-center md:text-left relative z-10">
-                            <h3 className="text-3xl font-bold mb-4 text-white">
+                            <h3 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
                                 Ready to build your success story?
                             </h3>
                             <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
