@@ -63,6 +63,21 @@ export const translations = {
                     desc: '24/7 maintenance and technical support.',
                     testimonial: "Always there when we need them."
                 }
+            },
+            bookingForm: {
+                title: 'Book {service}',
+                name: 'Your Name',
+                email: 'Your Email',
+                phone: 'Your Phone',
+                details: 'Project Details',
+                submit: 'Send to WhatsApp',
+                direct: 'Direct Chat',
+                placeholder: {
+                    name: 'Enter your name',
+                    email: 'Enter your email',
+                    phone: 'Enter your phone number',
+                    details: 'Describe your project goal, timeline, etc.'
+                }
             }
         },
         process: {
@@ -336,6 +351,21 @@ export const translations = {
                     title: 'الدعم الفني',
                     desc: 'صيانة ودعم فني على مدار الساعة.',
                     testimonial: "دائماً موجودون عندما نحتاجهم."
+                }
+            },
+            bookingForm: {
+                title: 'حجز خدمة {service}',
+                name: 'الاسم',
+                email: 'البريد الإلكتروني',
+                phone: 'رقم الهاتف',
+                details: 'تفاصيل المشروع',
+                submit: 'إرسال عبر واتساب',
+                direct: 'تواصل مباشر',
+                placeholder: {
+                    name: 'أدخل اسمك',
+                    email: 'أدخل بريدك الإلكتروني',
+                    phone: 'أدخل رقم هاتفك',
+                    details: 'اشرح هدف المشروع، الجدول الزمني، إلخ...'
                 }
             }
         },

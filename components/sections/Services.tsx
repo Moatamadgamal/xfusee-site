@@ -13,12 +13,15 @@ import {
     Link2
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import { Star, MessageSquareQuote } from 'lucide-react';
+import { Star, MessageSquareQuote, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 import { staggerContainer, staggerItem } from '@/utils/animations';
 import { ThreeCardIcon } from '../ui/ThreeCardIcon';
 
 import { useLanguage } from '@/providers/LanguageProvider';
+import { Modal } from '@/components/ui/Modal';
+import { ServiceBookingForm } from './ServiceBookingForm';
+import { useState } from 'react';
 
 export function Services() {
     const { t } = useLanguage();
@@ -26,6 +29,13 @@ export function Services() {
         triggerOnce: true,
         threshold: 0.1,
     });
+    const [selectedService, setSelectedService] = useState<string | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleBookClick = (title: string) => {
+        setSelectedService(title);
+        setIsModalOpen(true);
+    };
 
     const services = [
         {
@@ -200,14 +210,26 @@ export function Services() {
                                         </div>
 
                                         {/* Action Button */}
-                                        <Button
-                                            className="w-full"
-                                            variant={service.featured ? 'primary' : 'secondary'}
-                                            size="sm"
-                                            onClick={() => window.open(`https://wa.me/201508557715?text=${encodeURIComponent(`Hello, I'd like to chat about ${service.title}`)}`, '_blank')}
-                                        >
-                                            {t.services.bookService}
-                                        </Button>
+                                        {/* Action Buttons */}
+                                        <div className="flex gap-2">
+                                            <Button
+                                                className="flex-grow"
+                                                variant={service.featured ? 'primary' : 'secondary'}
+                                                size="sm"
+                                                onClick={() => handleBookClick(service.title)}
+                                            >
+                                                {t.services.bookService}
+                                            </Button>
+                                            <Button
+                                                variant="outline"
+                                                size="sm"
+                                                className="px-3 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white"
+                                                onClick={() => window.open(`https://wa.me/201508557715?text=${encodeURIComponent(`Hello, I'd like to chat about ${service.title}`)}`, '_blank')}
+                                                title={t.services.bookingForm.direct}
+                                            >
+                                                <MessageCircle className="w-4 h-4" />
+                                            </Button>
+                                        </div>
                                     </div>
                                 </Card>
 
@@ -216,6 +238,19 @@ export function Services() {
                     })}
                 </motion.div>
             </div>
+
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                title={t.services.bookingForm.title.replace('{service}', selectedService || '')}
+            >
+                {selectedService && (
+                    <ServiceBookingForm
+                        serviceTitle={selectedService}
+                        onClose={() => setIsModalOpen(false)}
+                    />
+                )}
+            </Modal>
         </section >
     );
 }
