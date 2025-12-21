@@ -1,7 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { Services } from "@/components/sections/Services";
+import { ServicesCarousel } from "@/components/sections/ServicesCarousel";
 import { AboutXfuse } from "@/components/sections/AboutXfuse";
 import { WhyXfuse } from "@/components/sections/WhyXfuse";
 import { AISolutions } from "@/components/sections/AISolutions";
@@ -17,7 +17,7 @@ export default function Home() {
 
             <Hero />
 
-            <Services />
+            <ServicesCarousel />
 
             <AboutXfuse />
 
