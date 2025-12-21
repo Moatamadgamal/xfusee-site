@@ -121,12 +121,13 @@ export function Header() {
                         </Link>
 
                         {/* Desktop Navigation - Control Panel Style */}
-                        <nav className="hidden md:flex items-center space-x-1 relative perspective-container">
+                        <nav className={`hidden md:flex items-center relative perspective-container ${t.nav.services === 'الخدمات' ? 'space-x-reverse space-x-1' : 'space-x-1'
+                            }`}>
                             {navItems.map((item, index) => (
                                 <motion.button
                                     key={item.href}
                                     onClick={() => scrollToSection(item.href)}
-                                    className="relative px-4 py-2 text-sm font-semibold text-gray-900 dark:text-gray-300 hover:text-primary-600 dark:hover:text-white transition-colors group"
+                                    className="relative px-3 lg:px-4 py-2 text-sm font-semibold text-gray-900 dark:text-gray-300 hover:text-primary-600 dark:hover:text-white transition-colors group whitespace-nowrap"
                                     initial={{ opacity: 0, y: -20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: index * 0.1 }}

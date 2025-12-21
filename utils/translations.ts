@@ -36,32 +36,38 @@ export const translations = {
                 web: {
                     title: 'Web Development',
                     desc: 'High-performance websites and custom web applications.',
-                    testimonial: "The best dev team we've worked with."
+                    testimonial: "The best dev team we've worked with.",
+                    detailedDesc: 'Transform your digital presence with cutting-edge web solutions. We build lightning-fast, SEO-optimized websites using the latest technologies like Next.js, React, and Node.js. From corporate websites to complex web applications, we deliver scalable solutions that grow with your business. Every project includes responsive design, security best practices, and performance optimization to ensure your site stands out in the digital landscape.'
                 },
                 mobile: {
                     title: 'Mobile Apps',
                     desc: 'Native and cross-platform mobile experiences.',
-                    testimonial: "Our app launched perfectly on both stores."
+                    testimonial: "Our app launched perfectly on both stores.",
+                    detailedDesc: 'Reach millions of users with powerful mobile applications. We specialize in both native (iOS/Android) and cross-platform development using React Native and Flutter. Our apps feature intuitive interfaces, smooth animations, and offline capabilities. From concept to App Store deployment, we handle everything including push notifications, in-app purchases, and seamless API integrations to create experiences users love.'
                 },
                 ecommerce: {
                     title: 'E-commerce',
                     desc: 'Scalable online stores that drive sales.',
-                    testimonial: "Sales increased by 200% after the redesign."
+                    testimonial: "Sales increased by 200% after the redesign.",
+                    detailedDesc: 'Launch your online empire with our comprehensive e-commerce solutions. We build conversion-optimized stores with secure payment gateways, inventory management, and advanced analytics. Features include multi-currency support, abandoned cart recovery, product recommendations, and mobile-first checkout. Whether you need a Shopify customization or a fully custom platform, we create shopping experiences that turn visitors into loyal customers.'
                 },
                 ai: {
                     title: 'AI Solutions',
                     desc: 'Intelligent automation and chatbots.',
-                    testimonial: "The AI saved us countless hours."
+                    testimonial: "The AI saved us countless hours.",
+                    detailedDesc: 'Harness the power of artificial intelligence to revolutionize your operations. Our AI solutions include intelligent chatbots with natural language processing, automated workflow systems, predictive analytics, and custom machine learning models. We integrate AI seamlessly into your existing systems to reduce costs, improve efficiency, and provide 24/7 intelligent customer service. From simple automation to complex AI-driven decision making, we make AI accessible and practical.'
                 },
                 design: {
                     title: 'UI/UX Design',
                     desc: 'User-centric designs that engage and convert.',
-                    testimonial: "Absolutely stunning designs."
+                    testimonial: "Absolutely stunning designs.",
+                    detailedDesc: 'Create unforgettable user experiences with our design expertise. We craft pixel-perfect interfaces that combine aesthetics with functionality. Our process includes user research, wireframing, prototyping, and usability testing. Every design decision is data-driven and user-focused, ensuring high engagement and conversion rates. We specialize in modern design trends including glassmorphism, micro-interactions, and dark mode, delivering designs that not only look stunning but drive real business results.'
                 },
                 support: {
                     title: 'Support',
                     desc: '24/7 maintenance and technical support.',
-                    testimonial: "Always there when we need them."
+                    testimonial: "Always there when we need them.",
+                    detailedDesc: 'Keep your digital products running flawlessly with our dedicated support services. We provide round-the-clock monitoring, regular updates, security patches, and performance optimization. Our support includes bug fixes, feature enhancements, server management, and emergency response. With proactive maintenance and rapid issue resolution, we ensure maximum uptime and peak performance. Your success is our priority, and we\'re always just a message away.'
                 }
             },
             bookingForm: {
@@ -325,32 +331,38 @@ export const translations = {
                 web: {
                     title: 'تطوير الويب',
                     desc: 'مواقع عالية الأداء وتطبيقات ويب مخصصة.',
-                    testimonial: "أفضل فريق تطوير تعاملنا معه."
+                    testimonial: "أفضل فريق تطوير تعاملنا معه.",
+                    detailedDesc: 'حوّل تواجدك الرقمي بحلول ويب متطورة. نبني مواقع فائقة السرعة ومُحسّنة لمحركات البحث باستخدام أحدث التقنيات مثل Next.js و React و Node.js. من المواقع المؤسسية إلى تطبيقات الويب المعقدة، نقدم حلولاً قابلة للتوسع تنمو مع عملك. كل مشروع يتضمن تصميماً متجاوباً، أفضل ممارسات الأمان، وتحسين الأداء لضمان تميز موقعك في المشهد الرقمي.'
                 },
                 mobile: {
                     title: 'تطبيقات الجوال',
                     desc: 'تجربة مستخدم أصلية ومتعددة المنصات.',
-                    testimonial: "تطبيقنا انطلق بنجاح على المتجرين."
+                    testimonial: "تطبيقنا انطلق بنجاح على المتجرين.",
+                    detailedDesc: 'اوصل لملايين المستخدمين بتطبيقات جوال قوية. نتخصص في التطوير الأصلي (iOS/Android) والمتعدد المنصات باستخدام React Native و Flutter. تطبيقاتنا تتميز بواجهات بديهية، حركات سلسة، وإمكانيات العمل بدون إنترنت. من الفكرة إلى النشر على المتاجر، نتعامل مع كل شيء بما في ذلك الإشعارات، المشتريات داخل التطبيق، والتكامل السلس مع APIs لإنشاء تجارب يحبها المستخدمون.'
                 },
                 ecommerce: {
                     title: 'التجارة الإلكترونية',
                     desc: 'متاجر إلكترونية قابلة للتوسع تزيد مبيعاتك.',
-                    testimonial: "زادت المبيعات بنسبة 200% بعد إعادة التصميم."
+                    testimonial: "زادت المبيعات بنسبة 200% بعد إعادة التصميم.",
+                    detailedDesc: 'أطلق إمبراطوريتك التجارية الإلكترونية بحلولنا الشاملة. نبني متاجر مُحسّنة للتحويل مع بوابات دفع آمنة، إدارة مخزون، وتحليلات متقدمة. المميزات تشمل دعم العملات المتعددة، استرجاع السلة المهجورة، توصيات المنتجات، والدفع المُحسّن للجوال. سواء كنت تحتاج تخصيص Shopify أو منصة مخصصة بالكامل، نخلق تجارب تسوق تحول الزوار إلى عملاء مخلصين.'
                 },
                 ai: {
                     title: 'حلول الذكاء الاصطناعي',
                     desc: 'أتمتة ذكية وروبوتات محادثة.',
-                    testimonial: "الذكاء الاصطناعي وفر علينا ساعات لا تحصى."
+                    testimonial: "الذكاء الاصطناعي وفر علينا ساعات لا تحصى.",
+                    detailedDesc: 'استغل قوة الذكاء الاصطناعي لإحداث ثورة في عملياتك. حلولنا تشمل روبوتات محادثة ذكية بمعالجة اللغة الطبيعية، أنظمة سير عمل آلية، تحليلات تنبؤية، ونماذج تعلم آلي مخصصة. ندمج الذكاء الاصطناعي بسلاسة في أنظمتك الحالية لتقليل التكاليف، تحسين الكفاءة، وتوفير خدمة عملاء ذكية على مدار الساعة. من الأتمتة البسيطة إلى اتخاذ القرارات المعقدة بالذكاء الاصطناعي، نجعل الذكاء الاصطناعي متاحاً وعملياً.'
                 },
                 design: {
                     title: 'تصميم واجهة المستخدم',
                     desc: 'تصاميم تركز على المستخدم وتجذب الانتباه.',
-                    testimonial: "تصاميم مذهلة للغاية."
+                    testimonial: "تصاميم مذهلة للغاية.",
+                    detailedDesc: 'اخلق تجارب مستخدم لا تُنسى بخبرتنا في التصميم. نصمم واجهات مثالية البكسل تجمع بين الجماليات والوظائف. عمليتنا تشمل بحث المستخدم، الإطارات الشبكية، النماذج الأولية، واختبار سهولة الاستخدام. كل قرار تصميمي مبني على البيانات ومركز على المستخدم، مما يضمن معدلات تفاعل وتحويل عالية. نتخصص في اتجاهات التصميم الحديثة بما في ذلك glassmorphism، التفاعلات الدقيقة، والوضع الداكن، مقدمين تصاميم لا تبدو مذهلة فحسب بل تحقق نتائج أعمال حقيقية.'
                 },
                 support: {
                     title: 'الدعم الفني',
                     desc: 'صيانة ودعم فني على مدار الساعة.',
-                    testimonial: "دائماً موجودون عندما نحتاجهم."
+                    testimonial: "دائماً موجودون عندما نحتاجهم.",
+                    detailedDesc: 'حافظ على تشغيل منتجاتك الرقمية بشكل مثالي مع خدمات الدعم المخصصة لدينا. نوفر مراقبة على مدار الساعة، تحديثات منتظمة، تصحيحات أمنية، وتحسين الأداء. دعمنا يشمل إصلاح الأخطاء، تحسينات الميزات، إدارة الخوادم، والاستجابة للطوارئ. مع الصيانة الاستباقية والحل السريع للمشاكل، نضمن أقصى وقت تشغيل وأداء مثالي. نجاحك هو أولويتنا، ونحن دائماً على بعد رسالة واحدة.'
                 }
             },
             bookingForm: {
