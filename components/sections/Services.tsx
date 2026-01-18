@@ -114,7 +114,7 @@ export function Services() {
     ];
 
     return (
-        <section id="services" className="py-20 relative overflow-hidden">
+        <section id="services" className="py-20 relative overflow-hidden ring-4 ring-red-500">
             {/* Background effect */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-500/5 to-transparent pointer-events-none" />
 
