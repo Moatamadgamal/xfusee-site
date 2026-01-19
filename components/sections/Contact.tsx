@@ -78,12 +78,20 @@ Sent from XFUSE Website
     }, 4500);
   };
 
+  // ✅ ستايل موحّد للـ inputs في اللايت عشان يبقى في Border واضح
+  // لو Input/Textarea component بتقبل className → هيتطبق فورًا
+  const fieldClass =
+    'border border-primary-500/25 bg-white/60 text-gray-900 ' +
+    'hover:border-primary-500/40 focus:border-primary-500/60 ' +
+    'focus:ring-2 focus:ring-primary-500/25 ' +
+    'dark:border-white/10 dark:bg-white/5 dark:text-white ' +
+    'dark:hover:border-white/15 dark:focus:ring-primary-500/30';
+
   return (
     <section
       id="contact"
       className={[
         'relative overflow-hidden',
-        // ✅ أقل من py-20 عشان السكشن مايبقاش طويل
         'py-14 sm:py-16',
         'scroll-mt-28',
       ].join(' ')}
@@ -96,9 +104,8 @@ Sent from XFUSE Website
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* ✅ خلي المحتوى narrower عشان يبقى premium */}
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-10 items-start max-w-6xl mx-auto">
-          {/* Left side - Info (أخف) */}
+          {/* Left side */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -124,7 +131,6 @@ Sent from XFUSE Website
               {t.contact.description}
             </p>
 
-            {/* ✅ Cards أصغر ومش واخدة مساحة */}
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-4">
                 <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
@@ -156,14 +162,23 @@ Sent from XFUSE Website
             </div>
           </motion.div>
 
-          {/* Right side - Form (أقصر + Grid) */}
+          {/* Right side - Form */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
           >
-            <div className="rounded-3xl p-6 sm:p-7 border border-white/10 bg-white/5 backdrop-blur-xl shadow-glow">
+            {/* ✅ هنا التعديل الأساسي: border واضح في اللايت */}
+            <div
+              className={[
+                'rounded-3xl p-6 sm:p-7 backdrop-blur-xl shadow-glow',
+                'bg-white/60 dark:bg-white/5',
+                'border border-primary-500/20 dark:border-white/10',
+                'hover:border-primary-500/30 dark:hover:border-white/15',
+                'transition-colors',
+              ].join(' ')}
+            >
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                   {/* Name */}
@@ -175,10 +190,11 @@ Sent from XFUSE Website
                       {...register('name')}
                       placeholder={t.contact.form.name.placeholder}
                       error={errors.name?.message}
+                      className={fieldClass}
                     />
                   </div>
 
-                  {/* ✅ Email + Phone في صف واحد على sm+ */}
+                  {/* Email + Phone */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold mb-2 opacity-90">
@@ -189,6 +205,7 @@ Sent from XFUSE Website
                         type="email"
                         placeholder={t.contact.form.email.placeholder}
                         error={errors.email?.message}
+                        className={fieldClass}
                       />
                     </div>
 
@@ -201,6 +218,7 @@ Sent from XFUSE Website
                         type="tel"
                         placeholder={t.contact.form.phone.placeholder}
                         error={errors.phone?.message}
+                        className={fieldClass}
                       />
                     </div>
                   </div>
@@ -211,31 +229,31 @@ Sent from XFUSE Website
                       {t.contact.form.service.label}
                     </label>
 
-                    <div className="relative">
-                      <select
-                        {...register('service')}
-                        className={[
-                          'flex h-11 w-full rounded-xl',
-                          'border border-white/10 bg-white/5 backdrop-blur',
-                          'px-4 text-sm text-gray-900 dark:text-white',
-                          'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent',
-                          'transition-all duration-200',
-                        ].join(' ')}
-                      >
-                        <option value="" className="bg-white dark:bg-gray-900">
-                          {t.contact.form.service.placeholder}
+                    <select
+                      {...register('service')}
+                      className={[
+                        'flex h-11 w-full rounded-xl px-4 text-sm transition-all duration-200',
+                        // ✅ Border واضح في اللايت
+                        'bg-white/60 text-gray-900 border border-primary-500/25',
+                        'hover:border-primary-500/40',
+                        'focus:outline-none focus:ring-2 focus:ring-primary-500/25 focus:border-primary-500/60',
+                        // ✅ دارك زي ما هو
+                        'dark:bg-white/5 dark:text-white dark:border-white/10 dark:hover:border-white/15 dark:focus:ring-primary-500/30',
+                      ].join(' ')}
+                    >
+                      <option value="" className="bg-white dark:bg-gray-900">
+                        {t.contact.form.service.placeholder}
+                      </option>
+                      {serviceOptions.map((service) => (
+                        <option
+                          key={service}
+                          value={service}
+                          className="bg-white dark:bg-gray-900"
+                        >
+                          {service}
                         </option>
-                        {serviceOptions.map((service) => (
-                          <option
-                            key={service}
-                            value={service}
-                            className="bg-white dark:bg-gray-900"
-                          >
-                            {service}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+                      ))}
+                    </select>
 
                     {errors.service && (
                       <p className="mt-1 text-xs text-red-400">
@@ -244,7 +262,7 @@ Sent from XFUSE Website
                     )}
                   </div>
 
-                  {/* Message (أصغر) */}
+                  {/* Message */}
                   <div>
                     <label className="block text-xs font-semibold mb-2 opacity-90">
                       {t.contact.form.message.label}
@@ -254,6 +272,7 @@ Sent from XFUSE Website
                       placeholder={t.contact.form.message.placeholder}
                       error={errors.message?.message}
                       rows={3}
+                      className={fieldClass}
                     />
                   </div>
 
@@ -264,7 +283,6 @@ Sent from XFUSE Website
                     )}
                   </Button>
 
-                  {/* ✅ سطر صغير under button بدل مساحة كبيرة */}
                   <p className="text-[12px] text-gray-600 dark:text-gray-400 text-center pt-1">
                     {language === 'ar'
                       ? 'بالضغط على إرسال سيتم فتح واتساب لإرسال التفاصيل.'

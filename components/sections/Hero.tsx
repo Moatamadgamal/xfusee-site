@@ -4,7 +4,6 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Sparkles, Code2, Zap } from 'lucide-react';
 import { fadeIn, slideUp, slideLeft } from '@/utils/animations';
-import { ThreeBackground } from '@/components/ui/ThreeBackground';
 import { useLanguage } from '@/providers/LanguageProvider';
 
 export function Hero() {
@@ -19,24 +18,38 @@ export function Hero() {
     document.querySelector('#portfolio')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Floating shapes data
+  const shapes = [
+    { size: 80, color: 'bg-blue-400/30', xRange: [-50, 50], yRange: [0, 40], top: 'top-10', left: 'left-10' },
+    { size: 100, color: 'bg-purple-400/20', xRange: [-30, 30], yRange: [0, 50], top: 'top-1/3', left: 'left-1/2' },
+    { size: 60, color: 'bg-pink-400/25', xRange: [-40, 40], yRange: [0, 30], top: 'bottom-20', left: 'right-20' },
+    { size: 90, color: 'bg-cyan-400/20', xRange: [-50, 50], yRange: [0, 60], top: 'top-1/2', left: 'right-1/4' },
+    { size: 70, color: 'bg-green-400/20', xRange: [-20, 20], yRange: [0, 40], top: 'bottom-1/4', left: 'left-1/3' },
+  ];
+
   return (
-    // ✅ هنا التعديل: overflow-x-hidden بدل overflow-hidden
-    <section className="relative min-h-screen flex items-center justify-center overflow-x-hidden pt-20">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-primary-500/10 via-transparent to-cyan-500/10" />
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Animated Floating Shapes Background */}
+      {!reduceMotion && (
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {shapes.map((shape, i) => (
+            <motion.div
+              key={i}
+              className={`absolute ${shape.top} ${shape.left} rounded-full ${shape.color}`}
+              style={{ width: shape.size, height: shape.size }}
+              animate={{
+                y: [shape.yRange[0], shape.yRange[1], shape.yRange[0]],
+                x: [shape.xRange[0], shape.xRange[1], shape.xRange[0]],
+              }}
+              transition={{ duration: 15 + i * 5, repeat: Infinity, ease: 'easeInOut' }}
+            />
+          ))}
+        </div>
+      )}
 
-        {!reduceMotion && (
-          <div className="hidden lg:block absolute inset-0">
-            <ThreeBackground />
-          </div>
-        )}
-
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,112,243,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,112,243,0.03)_1px,transparent_1px)] bg-[size:120px_120px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_80%)] pointer-events-none" />
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
           <div className="text-center lg:text-start">
             <motion.div
               variants={fadeIn}
@@ -45,17 +58,21 @@ export function Hero() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary-500/30 mb-6"
             >
               <Sparkles className="w-4 h-4 text-primary-400" />
-              <span className="text-sm text-primary-400 font-semibold">{t.hero.badge}</span>
+              <span className="text-sm text-primary-400 font-semibold">
+                {t.hero.badge}
+              </span>
             </motion.div>
 
             <motion.h1
               variants={slideUp}
               initial="hidden"
               animate="visible"
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-gray-900 dark:text-white"
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
             >
               {t.hero.titleRegular}
-              <span className="block text-gradient-3d mt-2">{t.hero.titleGradient}</span>
+              <span className="block text-gradient-3d mt-2">
+                {t.hero.titleGradient}
+              </span>
             </motion.h1>
 
             <motion.p
@@ -95,14 +112,19 @@ export function Hero() {
               {[t.hero.stats.projects, t.hero.stats.satisfaction, t.hero.stats.support].map(
                 (stat, index) => (
                   <div key={index} className="text-center lg:text-start">
-                    <div className="text-3xl font-bold text-gradient">{stat.value}</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+                    <div className="text-3xl font-bold text-gradient">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      {stat.label}
+                    </div>
                   </div>
                 )
               )}
             </motion.div>
           </div>
 
+          {/* Right Floating Cards */}
           <motion.div
             variants={slideLeft}
             initial="hidden"
@@ -110,48 +132,23 @@ export function Hero() {
             className="relative hidden lg:block"
           >
             <div className="relative w-full h-[500px]">
-              <motion.div
-                className="absolute top-20 right-20 glass rounded-2xl p-6 border border-primary-500/30 shadow-glow will-change-transform"
-                whileHover={reduceMotion ? undefined : { y: -10, scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              >
-                <Code2 className="w-12 h-12 text-primary-400 mb-2" />
-                <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">
-                  {t.hero.floating.cleanCode}
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="absolute top-60 left-10 glass rounded-2xl p-6 border border-cyan-500/30 shadow-glow-cyan will-change-transform"
-                whileHover={reduceMotion ? undefined : { y: -10, scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              >
-                <Zap className="w-12 h-12 text-cyan-400 mb-2" />
-                <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">
-                  {t.hero.floating.fastDelivery}
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="absolute bottom-20 right-40 glass rounded-2xl p-6 border border-purple-500/30 shadow-glow-purple will-change-transform"
-                whileHover={reduceMotion ? undefined : { y: -10, scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              >
-                <Sparkles className="w-12 h-12 text-purple-400 mb-2" />
-                <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">
-                  {t.hero.floating.aiPowered}
-                </p>
-              </motion.div>
-
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-primary rounded-full blur-2xl opacity-15" />
+              {[ 
+                { icon: Code2, text: t.hero.floating.cleanCode, top: 'top-20 right-20', color: 'primary' },
+                { icon: Zap, text: t.hero.floating.fastDelivery, top: 'top-60 left-10', color: 'cyan' },
+                { icon: Sparkles, text: t.hero.floating.aiPowered, top: 'bottom-20 right-40', color: 'purple' },
+              ].map(({ icon: Icon, text, top, color }, i) => (
+                <motion.div
+                  key={i}
+                  className={`absolute ${top} glass rounded-2xl p-6 border border-${color}-500/30 shadow-glow`}
+                  whileHover={reduceMotion ? undefined : { y: -8, scale: 1.03 }}
+                  transition={{ type: 'spring', stiffness: 250, damping: 18 }}
+                >
+                  <Icon className={`w-12 h-12 text-${color}-400 mb-2`} />
+                  <p className="text-sm font-semibold">{text}</p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
-        </div>
-      </div>
-
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-        <div className="w-6 h-10 rounded-full border-2 border-primary-500/30 flex justify-center pt-2">
-          <div className="w-1.5 h-2 bg-primary-500 rounded-full opacity-80" />
         </div>
       </div>
     </section>
